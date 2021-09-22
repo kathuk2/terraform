@@ -1,7 +1,7 @@
-resource "azurerm_mssql_server" "example" {
-  name                         = "mssqlserver"
-  resource_group_name          = azurerm_resource_group.example.name
-  location                     = azurerm_resource_group.example.location
+resource "azurerm_mssql_server" "exampleSQLServer" {
+  name                         = "KTsqlserver"
+  resource_group_name          = var.resourcegroupName
+  location                     = var.location
   version                      = "12.0"
   administrator_login          = "missadministrator"
   administrator_login_password = "thisIsKat11"
@@ -13,8 +13,8 @@ resource "azurerm_mssql_server" "example" {
   }
 
   extended_auditing_policy {
-    storage_endpoint                        = azurerm_storage_account.example.primary_blob_endpoint
-    storage_account_access_key              = azurerm_storage_account.example.primary_access_key
+    storage_endpoint                        = "kathlk123"
+    storage_account_access_key              = "fhsgfhasfdjhgfdjasdfasdfdsf"
     storage_account_access_key_is_secondary = true
     retention_in_days                       = 6
   }
