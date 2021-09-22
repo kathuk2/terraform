@@ -1,5 +1,5 @@
 resource "azurerm_mssql_server" "exampleSQLServer" {
-  name                         = "KTsqlserver"
+  name                         = "kathlk900"
   resource_group_name          = var.resourcegroupName
   location                     = var.location
   version                      = "12.0"
