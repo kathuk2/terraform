@@ -1,3 +1,7 @@
+resource "azurerm_resource_group" "example" {
+  name     = "database-rg"
+  location = "West Europe"
+}
 resource "azurerm_mssql_server" "exampleSQLServer" {
   name                         = "kt900"
   resource_group_name          = var.resourcegroupName
@@ -13,8 +17,8 @@ resource "azurerm_mssql_server" "exampleSQLServer" {
   }
 
   extended_auditing_policy {
-    storage_endpoint                        = azurerm_storage_account.exampleSQLServer.primary_blob_endpoint
-    storage_account_access_key              = azurerm_storage_account.exampleSQLServer.primary_access_key
+    storage_endpoint                        = azurerm_storage_account.mystorageaccount.primary_blob_endpoint
+    storage_account_access_key              = azurerm_storage_account.mystorageaccount.primary_access_key
     storage_account_access_key_is_secondary = true
     retention_in_days                       = 6
   }
