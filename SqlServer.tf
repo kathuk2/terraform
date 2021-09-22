@@ -1,5 +1,5 @@
 resource "azurerm_mssql_server" "exampleSQLServer" {
-  name                         = "kathlk900"
+  name                         = "kt900"
   resource_group_name          = var.resourcegroupName
   location                     = var.location
   version                      = "12.0"
@@ -13,8 +13,8 @@ resource "azurerm_mssql_server" "exampleSQLServer" {
   }
 
   extended_auditing_policy {
-    storage_endpoint                        = "localhost"
-    storage_account_access_key              = "fhsgfhasfdjhgfdjasdfasdfdsf"
+    storage_endpoint                        = azurerm_storage_account.exampleSQLServer.primary_blob_endpoint
+    storage_account_access_key              = azurerm_storage_account.exampleSQLServer.primary_access_key
     storage_account_access_key_is_secondary = true
     retention_in_days                       = 6
   }
