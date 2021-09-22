@@ -13,7 +13,7 @@ resource "azurerm_mssql_server" "exampleSQLServer" {
   }
 
   extended_auditing_policy {
-    storage_endpoint                        = "kathlk123"
+    storage_endpoint                        = "localhost"
     storage_account_access_key              = "fhsgfhasfdjhgfdjasdfasdfdsf"
     storage_account_access_key_is_secondary = true
     retention_in_days                       = 6
