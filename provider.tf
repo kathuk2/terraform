@@ -9,7 +9,7 @@ terraform {
    backend "azurerm" {
     resource_group_name   = "tstate"
     # Paste the storage name generate after creating the blob storgae
-    storage_account_name  = ""
+    storage_account_name  = "tstate7170"
     container_name        = "tstate"
     key                   = "terraform.tfstate"
   }
